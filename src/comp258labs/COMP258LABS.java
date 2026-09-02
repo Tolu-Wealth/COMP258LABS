@@ -14,7 +14,8 @@ public class COMP258LABS {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("COMP258LABS will be here"); // TODO code application logic here
+        System.out.println("COMP258LABS will be here"); // TODOcode application logic here
+        System.out.println("Lab_1 - Console Framework");
     }
     
 }
