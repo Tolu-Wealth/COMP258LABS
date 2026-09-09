@@ -40,11 +40,49 @@ public class ArrayProgram  extends ConsoleFramework {
         if (choice==1){
             printNumbers();
         }
+        else if(choice == 2){
+            printNumbers();
+        }
+        else if(choice == 3){
+            searchForNumber();
+        }
     }
     
     public void printNumbers(){
         for (int i=0; i<numbers.length; i++){
             System.out.println(i+1+". "+numbers[i]);
+        }
+    }
+    
+    public void searchForNumber() {
+        boolean found = false;
+        int target = this.readInt("Please enter a number to search for: ");
+        for(int i=0; i<numbers.length; i++){
+            if (target == numbers[i]) {
+                found = true;
+                System.out.println("Found. First occurence at: " + (i+1));
+                break;
+            }
+        }
+        if(!found){
+            System.out.println("Target not in collection");
+        }
+    }
+    
+    public void findAndReplace() {
+        boolean found = false;
+        int target = this.readInt("please enter a number to replace: ");
+        int newValue = this.readInt("Enter new value: ");
+        for(int i = 0; i < numbers.length; i++){
+            if (target == numbers[i]) {
+                found = true;
+                numbers[i] = newValue;
+                System.out.println("Found. Value at: " + (i + 1) + " replaced with " + newValue);
+                break;
+            }
+        }
+       if(!found){
+            System.out.println("Target not in collection");
         }
     }
 }
